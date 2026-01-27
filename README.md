@@ -14,6 +14,6 @@ I define three types of information: local $(z_i^{Local})$, global $(z_i^{Global
 
 (Jan 27 update) The current version uses mean pooling to compute $z_i^{Local}$ and $z_i^{Global}$. The neighborhood size of $z_i^{Local}$ and $z_i^{Global}$ is determined by the manually set kNN parameter $k$. For example, if the local neighborhood uses $k = 12$, then the local neighborhood size is $L = 13$, including the spot itself and its 12 neighboring spots.
 
-(Jan 27 update) The semantic meaning of $\Delta_i$ captures the deviation of the local microenvironment of spot $i$ from its regional tissue background. Regions such as tumor–stroma boundaries, immune infiltration fronts, or necrotic margins are typically not defined by absolute expression levels, but by abnormality relative to surrounding tissue. $\Delta_i$ explicitly highlights and distinguishes these spatial transition regions.
+(Jan 27 update) The semantic meaning of $\Delta_i$ captures the deviation of the local microenvironment of spot $i$ from its regional tissue background. Regions such as tumor–stroma boundaries, immune infiltration fronts, or necrotic margins are typically not defined by absolute expression levels, but by abnormality relative to surrounding tissue. $\Delta_i$ highlights and distinguishes these spatial transition regions.
 
 
