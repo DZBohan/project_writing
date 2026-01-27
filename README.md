@@ -12,6 +12,5 @@ For the second core question, I encode the surrounding microenvironment of spot 
 
 I define three types of information: local $[z_i^{Local}]$, global $[z_i^{Global}]$, and contrast $[\Delta_i = z_i^{Local} - z_i^{Global}]$. They represent the local neighborhood, the global neighborhood, and boundary or transition regions, respectively. I then fuse these with the original representation $z_i$ using an MLP: $z_i^{c} = \mathrm{MLP}(\mathrm{concat}[z_i, z_i^{Local}, z_i^{Global}, \Delta_i])$. Each resulting representation encodes the spot’s transcriptional state, local microenvironment context, regional background, and boundary or transition signals.
 
-(Jan 27 update) The current version uses mean pooling to compute $z_i^{Local}$ and $z_i^{Global}$.  
-The neighborhood size of $z_i^{Local}$ and $z_i^{Global}$ is determined by the manually set kNN parameter $k$. For example, if the local neighborhood uses $k = 12$, then the local neighborhood size is $L = 13$, including the spot itself and its 12 neighboring spots.
+(Jan 27 update) The current version uses mean pooling to compute $z_i^{Local}$ and $z_i^{Global}$. The neighborhood size of $z_i^{Local}$ and $z_i^{Global}$ is determined by the manually set kNN parameter $k$. For example, if the local neighborhood uses $k = 12$, then the local neighborhood size is $L = 13$, including the spot itself and its 12 neighboring spots.
 
