@@ -6,23 +6,4 @@ There are two core questions in encoding H&E images and Visium data. First, unli
 
 Second, if each spot is encoded only as a spot-level representation (spot × feature), each representation captures only the local gene expression state. It does not capture the spatial microenvironment or spatial context of that location. Therefore, spatial context, including local neighborhoods and global structure, must be injected into the embedding space representations.
 
-For the first core question, I use a lightweight MLP to independently encode each spot’s HVG vector into a spot embedding.  
-After Visium normalization and HVG selection (assuming 500 genes), the input for spot *i* is:
-
-$$
-x_i = [g_1, g_2, g_3, \dots, g_{500}]
-$$
-
-The input for a batch of spots is:
-
-$$
-X_b = [x_1, x_2, x_3, \dots, x_b]
-$$
-
-If the semantic space dimension is set to 256, the output is a set of 256-dimensional vectors:
-
-$$
-\{ z_i \}, \quad z_i \in \mathbb{R}^{256}
-$$
-
-where each vector represents the transcriptional state of the corresponding spot.
+For the first core question, I use a lightweight MLP to independently encode each spot’s HVG vector into a spot embedding. After Visium normalization and HVG selection (assume 500 genes), the input for spot $i$ is $x_i = [g_1, g_2, g_3, \ldots, g_{500}]$. The input for a batch of spots is $X_b = [x_1, x_2, x_3, \ldots, x_b]$. If the semantic space dimension is set to 256, the output is a set of 256-dimensional vectors $\{z_i\}$, where each vector represents the transcriptional state of the corresponding spot.
